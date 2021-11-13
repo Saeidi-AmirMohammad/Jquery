@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery</title>
     <style>
-        .blue{
+        .blue {
             color: rgb(58, 58, 201);
         }
-    </style>
 
-    <script src="./jquery-3.6.0.min.js"></script>
-    <script>
-        // jQuery('ul li').css('color' , 'red');
-        // $('ul li').css('color' , 'red');
-       $(document).ready(function(){
-           $('#item-2').addClass('blue')
-       });
-    </script>
+        .red {
+            color: rgb(201, 58, 77);
+        }
+
+        .green {
+            color: rgb(29, 179, 62);
+        }
+    </style>
 </head>
 
 <body>
-    
-    <ul>
+
+    <ul class="list2 green">
         <li> item 1</li>
-        <li id="item-2"> item 2</li>
+        <li> item 2</li>
         <li> item 3</li>
+        <li> item 4</li>
+        <li> item 5</li>
+        <li>
+            <ul class="list2 green">
+                <li>child item</li>
+            </ul>
+        </li>
     </ul>
 
-    
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+
+        // $('ul li').addClass('blue');
+        // $('ul li').first('li').addClass('red');
+        // $('ul li:nth-child(2)').text('Saeidi Amir Mohammad');
+        // $('ul li').eq(2).next().text('Saeidi Amir Mohammad');
+        $('li').parents('.list2').removeClass('green');
+
+
+    </script>
 </body>
+
 </html>
