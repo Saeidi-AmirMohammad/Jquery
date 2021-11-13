@@ -6,45 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery</title>
-    <style>
-        .blue {
-            color: rgb(58, 58, 201);
-        }
+    <link rel="stylesheet" href="./css/day.css">
 
-        .red {
-            color: rgb(201, 58, 77);
-        }
-
-        .green {
-            color: rgb(29, 179, 62);
-        }
-    </style>
 </head>
 
 <body>
 
-    <ul class="list2 green">
-        <li> item 1</li>
-        <li> item 2</li>
-        <li> item 3</li>
-        <li> item 4</li>
-        <li> item 5</li>
-        <li>
-            <ul class="list2 green">
-                <li>child item</li>
-            </ul>
-        </li>
-    </ul>
+    <h2>Good day</h2>
+
+    <button data-file="day">روز</button>
+    <button data-file="night">شب</button>
 
     <script src="./jquery-3.6.0.min.js"></script>
     <script>
+        $(document).ready(function () {
 
-        // $('ul li').addClass('blue');
-        // $('ul li').first('li').addClass('red');
-        // $('ul li:nth-child(2)').text('Saeidi Amir Mohammad');
-        // $('ul li').eq(2).next().text('Saeidi Amir Mohammad');
-        $('li').parents('.list2').removeClass('green');
+            $('button').click(function () {
+                var styleSheet = $(this).attr('data-file');
+                $(this).siblings('button').removeAttr('disabled' , 'disabled');
+                $('h2').text('Good' + " " + styleSheet);;
+                $('link').attr('href', './css/' + styleSheet + '.css');
+                $(this).attr('disabled' , 'disabled');
 
+            });
+
+        });
 
     </script>
 </body>
