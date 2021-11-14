@@ -6,30 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery</title>
-    <link rel="stylesheet" href="./css/day.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
 <body>
 
-    <h2>Good day</h2>
+    <dl>
+        <dt>Where are you from ?</dt>
+        <dd>Iran</dd>
+        <dt>Where are you from ?</dt>
+        <dd>Iran</dd>
+        <dt>Where are you from ?</dt>
+        <dd>Iran</dd>
+        <dt>Where are you from ?</dt>
+        <dd>Iran</dd>
+        <dt>Where are you from ?</dt>
+        <dd>Iran</dd>
+        <dt>Where are you from ?</dt>
+        <dd>Iran</dd>
+    </dl>
 
-    <button data-file="day">روز</button>
-    <button data-file="night">شب</button>
 
     <script src="./jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $('document').ready(function () {
+            $('dd').filter(':nth-child(n+4)').hide();
+            $('dt').on('mouseenter', function () {
+                $(this).siblings('dd').slideUp(200);
 
-            $('button').click(function () {
-                var styleSheet = $(this).attr('data-file');
-                $(this).siblings('button').removeAttr('disabled' , 'disabled');
-                $('h2').text('Good' + " " + styleSheet);;
-                $('link').attr('href', './css/' + styleSheet + '.css');
-                $(this).attr('disabled' , 'disabled');
-
+                $(this).next().slideDown(300);
             });
-
         });
 
     </script>
