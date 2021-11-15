@@ -12,31 +12,31 @@
 
 <body>
 
-    <dl>
-        <dt>Where are you from ?</dt>
-        <dd>Iran</dd>
-        <dt>Where are you from ?</dt>
-        <dd>Iran</dd>
-        <dt>Where are you from ?</dt>
-        <dd>Iran</dd>
-        <dt>Where are you from ?</dt>
-        <dd>Iran</dd>
-        <dt>Where are you from ?</dt>
-        <dd>Iran</dd>
-        <dt>Where are you from ?</dt>
-        <dd>Iran</dd>
-    </dl>
+    <h2>Site Title</h2>
+    <article>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, consequuntur fuga hic obcaecati blanditiis
+            repellat eum, quis beatae tempora aliquam deleniti cumque necessitatibus. Debitis magnam enim incidunt illum
+            quo nam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, consequatur dolor impedit architecto sit
+            sunt voluptatum itaque asperiores vel, accusamus illo repellat molestias, nihil aspernatur magni commodi.
+            Culpa, quas doloribus.</p>
+    </article>
 
 
     <script src="./jquery-3.6.0.min.js"></script>
     <script>
         $('document').ready(function () {
-            $('dd').filter(':nth-child(n+4)').hide();
-            $('dt').on('mouseenter', function () {
-                $(this).siblings('dd').slideUp(200);
+            $('article').prepend('<h5 class="title"> Lorem Title </h5>');
+            $('article').append('<h5 class="h5 h4">Title h5</h5>');
+            $('article').before('<h5 class="title"> Lorem Title h5 </h5>');
+            $('article').after('<h4 class="title"> Lorem Title </h4>');
+            //    $('p').wrap('<div class="back-color"></div>');
+            //    $('p').wrapAll('<div class="back-color"></div>');
+            $('p').wrapInner('<div class="back-color"></div>');
 
-                $(this).next().slideDown(300);
-            });
+
+
+
         });
 
     </script>
